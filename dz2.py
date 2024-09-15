@@ -1,22 +1,20 @@
 import random
-min = 93
-max = 100
+min = 1
+max = 5
 
-quantity = 1
+quantity = 5
 
 
-def get_numbers_tickets(min, max, quantity):
-    if min>0 and max<1000 and quantity<len(range(min,max)):
+def get_numbers_ticket(min, max, quantity):
+    if min>0 and max<1000 and quantity<=len(range(min,max+1)):
         a = list(range(min,max+1))
-        get_numbers_tickets = random.sample(a, quantity)
-        print(sorted(get_numbers_tickets))
-        return get_numbers_tickets
+        get_numbers_ticket = random.sample(a, quantity)
+        return sorted(get_numbers_ticket)
     else:
-        get_numbers_tickets = []
-        print(sorted(get_numbers_tickets))
+        get_numbers_ticket = []
+        print(sorted(get_numbers_ticket))
         return []
         
-get_numbers_tickets(min, max, quantity)
-get_numbers = get_numbers_tickets(1, 100, 5)
-print(f"Ваші лотерейні числа:{sorted(get_numbers)}")
 
+get_numbers = get_numbers_ticket(min,max,quantity)
+print(f"Ваші лотерейні числа:{get_numbers}")
