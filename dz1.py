@@ -6,17 +6,14 @@ def get_days_from_today(date):
     
     try: #обробка помилок
         date = datetime.strptime(date, "%Y-%m-%d")
+        get_days_from_today = date_now.toordinal() - date.toordinal()
+        return get_days_from_today
     except ValueError as ve1:
     # print("ValueError", ve1)
         print("Невірний формат дати")
-
-    try:
-        get_days_from_today = date_now.toordinal() - date.toordinal()
-        print(get_days_from_today) 
-        return get_days_from_today
+        return
         
-        
-    except NameError as ne1:
-        print("NameError", ne1)
-        
-get_days_from_today("2024-09-16")
+# get_days_from_today("2024-09-16")
+result = get_days_from_today("2024-09-16")
+if result != None:
+    print(f"Кількість днів: {result}")
