@@ -1,4 +1,5 @@
 import datetime
+import math
 
 from datetime import datetime
 
@@ -13,7 +14,7 @@ def get_days_from_today(date):
         print("Невірний формат дати")
 
     try:
-        get_days_from_today = date_now.toordinal() - date.toordinal()
+        get_days_from_today = abs(date_now.toordinal() - date.toordinal())
         print(get_days_from_today) 
         return get_days_from_today
         
